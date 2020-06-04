@@ -1,0 +1,86 @@
+===============================================================================
+							OBSERVATII GENERALE
+===============================================================================
+
+	La rularea programului se verifică dacă au fost date argumente, se verifică
+existența lor după care se salvează într-un vector de structuri( alocat 
+dinamic cu o capacitate inițială ) pe prima poziție numărul argumentelor și
+ele însele.
+
+	Vectorul de structuri joacă un rol important de-a lungul programului. Pe
+prima sa poziție am salvat diferite variabile necesare funcționării
+programului deoarece e mult mai practic sa transmit doar structura ca
+parametru în funcțiile în care am nevoie de variabilele respective.
+Ideea asta mi-a venit "pe drum", de aceea în program mai există și variabile
+(adresele lor) transmise ca parametru.
+
+	După asta se pornește meniul cu opțiunile (New Game, Resume, Wall of fame
+și Quit).
+
+	Structura unui fisier de intrabari este urmatoarea:
+		intrebare
+		varianta a
+		varianta b
+		varianta c
+		varianta d
+		a/b/c/d
+
+	Pentru un ecran de 80x24:
+	Dimensiune nume : 18 caractere
+	Dimensiune răspuns : 27 caractere
+	Dimensiune intrebare : 292 caractere
+
+
+===============================================================================
+								NEW GAME
+===============================================================================
+
+	La fiecare alegere a optiunii New Game se selecteaza în mod aleatoriu
+un fisier din fisierele de intrebari date ca argument si se stocheaza in
+structură intrebarile, variantele de raspuns, si raspunsul corect. Ulterior
+se începe efectiv jocul . În cazul apăsării tastei q/Q se revine la meniu
+și opțiunea Resume devine valabilă
+
+===============================================================================
+								RESUME
+===============================================================================
+
+	La alegerea Resume (când este diponibilă) se reia jocul din același punct
+apelându-se funcția comună celor 2 alegeri (start_game) cu valorile actuale
+ale parametrilor, valori ramase in urma opririi jocului.
+
+===============================================================================
+								WALL OF FAME
+===============================================================================
+
+	În cazul ăsta se afișează din fișierul Wall_of_fame punctajele obtinute
+de jucatori.
+
+===============================================================================
+								BONUSURI
+===============================================================================
+
+	Alegerea Resume nu este diponibilă până nu se începe o rundă de joc (sau
+până când nu se oprește una) și este colorat cu roșu când este highlightat.
+
+	Scoreboard-ul este construit in asa fel încat (fisierul din care se 
+citeste fiind inital gol) se adaugă jucator cu jucator ( in functie de scorul)
+obtinut pana se ajunge la 10 jucatori, iar apoi un jucator apare in scoreboard
+doar daca obtine un scor mai mare decat ultimul clasat.
+
+	La începutul jocului apare o căsuță în care jucatorul isi introduce numele
+
+	Optiunile SKIP si FIFTY-FIFTY sunt afisate cu verde cand sunt disponibile
+și cu verde imediat după ce sunt folosite.
+	
+	Scorul este afișat cu verde atâta timp cât este mai mare sau egal cu 0, și
+cu roșu când este negativ
+
+	După fiecare răspuns dat de jucător apare pe ecran o fereastra nouă în care
+dacă răspunsul este corect se afișează (timp de 1 secundă) : "Răspuns corect",
+iar dacă este greșit (timp de 3 secunde) :"Răspuns greșit" și se afișează pe
+ecran varianta corectă. În timpul acestor afișării acestor mesaje inputul de
+la jucător este indisponibil pentru a nu răspunde din greșeală la următoarea
+întrebare.
+
+===============================================================================
